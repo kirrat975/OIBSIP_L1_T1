@@ -1,0 +1,294 @@
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-image: linear-gradient(seagreen,lightblue);
+    
+}
+img{
+    border:5px double black;
+    padding:5px;
+}
+.image{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height: 400px;
+    background: url("menth.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 1s;
+    border:3px solid black;
+    
+   
+}
+.image:hover {
+    width:100%;
+    height: 410px;
+    background: url("menth.webp") no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+header{
+    position: relative;
+    top:0;
+    width: 100%;
+    padding:30px 100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+header .mlogo{
+    position: relative;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    
+
+
+}
+header h2{
+    font-size: 56px;
+    -webkit-text-stroke-width: 2px; 
+    -webkit-text-stroke-color:white;
+    
+}
+
+header .nav a{
+
+color: #000;
+background-color: mediumseagreen;
+font-size: 20px;
+font-weight: 500;
+letter-spacing: 1px;
+text-decoration: none;
+padding:2px 15px;
+border-radius: 20px;
+transition: 0.3s;
+border: 3px solid black;
+transition-property: background-color ;
+
+
+}
+
+header .nav a:not(:last-child){
+    margin-right: 30px;
+}
+
+header .nav a:hover{
+    background-color: royalblue;
+    text-decoration: underline;
+    border:5px double black;
+  
+}
+.cont{
+  
+    margin: 60px 100px;
+    display: flex;
+   margin-right: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.cont h2{
+    color:rebeccapurple;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    transition: 1s;
+    
+
+}
+.cont h2:hover{
+    transform: scale(1,1.1) translate(0px, -25px); 
+    -webkit-text-stroke-width: 2px; 
+    -webkit-text-stroke-color: mediumvioletred;
+}
+
+  
+
+
+.cont q{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    font-style: italic;
+
+}
+.cont p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.button{
+    margin: 30px 400px;
+   
+   font-size: 18px;
+    background-color:navy;
+    color: #fff;
+    border:5px solid darkblue; 
+    border-radius:20px; 
+    padding:15px;
+    
+}
+.button:hover {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    color:black;
+    
+    text-transform: uppercase;
+    -webkit-animation: bounce 0.8s;
+    transition-timing-function: ease;
+    animation-iteration-count: 10;
+    transition: 1s ease-in-out;
+}
+.button:focus {
+    outline-color: purple;
+    outline-style:double;
+    
+}
+
+
+@-webkit-keyframes bounce {
+    0% {
+        transform: scale(1,1) translate(0px, 0px);
+      }
+      
+      30%{
+        transform: scale(1,0.8) translate(0px, 10px); 
+      }
+    
+      75%{
+        transform: scale(1,1.1) translate(0px, -25px); 
+      }
+      
+     100% {
+        transform: scale(1,1) translate(0px, 0px);
+      }
+  }
+ 
+
+ label{
+     display: none;
+
+ }
+ #check{
+     z-index: 3;
+     display: none;
+ }
+ 
+ /*for responsive styles*/
+
+ @media (max-width:960px){
+    
+    
+
+     header .nav{
+         display: none;
+
+     }
+     
+     label{
+         display: block;
+         font-size: 25px;
+         cursor:pointer;
+         transition: 0.3s;
+         transition-property: color;
+     }
+     label:hover{
+         color:white;
+     }
+     label .close-btn{
+         display: none;
+     }
+     #check:checked ~ header .nav{
+         z-index: 2;
+         position: fixed;
+         background-color: rgba(114,223,255);
+         top:0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         display: flex;
+        
+         flex-direction: column;
+         justify-content: center;
+     }
+     #check:checked ~ header .nav a{
+         font-weight: 700;
+         margin-right: 0;
+         margin-bottom: 50px;
+         letter-spacing: 2px;
+
+     }
+     #check:checked ~ header label .menu-btn{
+         display: block;
+
+
+     }
+     #check:checked ~ header label .close-btn{
+         z-index: 2;
+         display: block;
+         position: fixed;
+
+     }
+     label .menu-btn{
+         position: absolute;
+     }
+     
+     header .mlogo{
+         position: absolute;
+         bottom: 6px;
+     }
+     
+     .cont{
+         display: inline;
+     }
+     .cont h2{
+         font-size: 30px;
+         line-height: 50px;
+
+     }
+     .cont p{
+         font-size: 14px;
+     }
+     
+     .button{
+         padding: 8px;
+         position: relative;
+         margin: 10px;
+         left:30%;
+         
+        
+     }
+     .image{
+        background-size: contain;
+        
+     }
+
+     .image:hover{
+        background-size: contain;
+        
+
+     }
+     
+     
+
+ }
+ 
